@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+			<th>UF</th>
+			<th>Tipo Pessoa</th>
+			<th>Acoes</th>
+		</tr>
+		<tr th:each="p : ${pessoas}">
+			<td th:text="${p.id}"></td>
+			<td th:text="${p.nome}"></td>
+			<td th:text="${p.estado.uf}"></td>
+			<td th:text="${p.tipoPessoa}"></td>
+			<td><a th:href="@{/pessoas/show/{id}(id=${p.id})}" >Mostrar Filhos e Grupos da pessoa</a></td>
+		</tr>
+	</table>	
+</body>
+</html>

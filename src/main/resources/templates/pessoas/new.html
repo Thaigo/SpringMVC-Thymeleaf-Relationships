@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+</head>
+<body>
+	<form th:object="${pessoa}" th:action="@{/pessoas/create}" method="POST">
+		<input type="hidden" th:field="*{id}" /> <br/>
+	
+		Nome:<br/> 		
+		<input type="text" th:field="*{nome}" /> <br/>
+		
+		Estado:<br/>
+		<select th:field="*{estado}">
+	    <option value="">Selecione o Estado</option>
+	    <option th:each="estado : ${estados}" th:value="${estado.id}" th:text="${estado.uf}"></option>
+	    </select> <br/>
+	    
+	    <div>
+			<th:block th:each="tipoPessoa : ${tiposPessoa}">				
+				<input type="radio" th:id="|id_${tipoPessoa}|" th:field="*{tipoPessoa}" th:value="${tipoPessoa}" /> 
+					<label th:for="|id_${tipoPessoa}|" th:text="${tipoPessoa.descricao}"></label>							
+			</th:block>
+		</div>
+				
+		<button type="submit">Salvar</button>
+	</form>
+</body>
+</html>
+
+
