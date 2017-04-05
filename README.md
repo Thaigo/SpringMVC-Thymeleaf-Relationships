@@ -1,12 +1,10 @@
 # SpringMVC-Thymeleaf-Relationships
 
-Exemplo de Relacionamentos OneToOne, ManyToOne, OneToMany, ManyToMany com Thymeleaf
 =========================================
-
 
 Summary
 -------
-Exemplo de CRUD com Spring e Thymeleaf
+Exemplo de Relacionamentos OneToOne, ManyToOne, OneToMany, ManyToMany com Thymeleaf
 
 Generated project characteristics
 -------------------------
